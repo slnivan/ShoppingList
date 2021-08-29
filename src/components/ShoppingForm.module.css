@@ -1,8 +1,14 @@
 .form {
     margin: 150px auto 0;
-    background-color: coral;
+    background-color: black;
     border-radius: 10px;
     width: 100%;
     max-width: 500px;
     padding: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.input {
+    width: 100%;
 }

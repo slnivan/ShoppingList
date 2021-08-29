@@ -3,30 +3,26 @@ import "./App.css";
 import ShoppingForm from "./components/ShoppingForm";
 import ShoppingList from "./components/ShoppingList";
 
-const shoppingListArr = [
-  { name: 'молоко', id: 2 },
-  { name: 'хлеб', id: 3 },
-  { name: 'яйца', id: 4 },
-  { name: 'сосиски', id: 1 },
-];
-
 function App() {
-  const [state, setState] = useState(shoppingListArr);
+  const [shoppList, setShopList] = useState([]);
 
   const saveHandler = (newInfo) => {
-    setState((prevState) => {
-     return [newInfo, ...prevState]
-    })
+    setShopList((prevShopList) => {
+      return [{ ...newInfo }, ...prevShopList];
+    });
+    console.log(shoppList);
   };
   const deleteHandler = (id) => {
-    setState(shoppingListArr.filter(item => item.id !== id)
-    )};
+    setShopList(shoppList.filter((item) => item.id !== id));
+  };
 
   return (
     <div className="App">
       <ShoppingForm onSave={saveHandler} />
-      {shoppingListArr.length === 0 ? <p>There is nothing to render</p> : (
-        <ShoppingList data={state} onDelete={deleteHandler} />
+      {shoppList.length === 0 ? (
+        <p>There is nothing to render</p>
+      ) : (
+        <ShoppingList data={shoppList} onDelete={deleteHandler} />
       )}
     </div>
   );

@@ -1,0 +1,14 @@
+.button {
+    padding: 10px;
+    width: 100%;
+    max-width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: firebrick;
+    transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: white;
+}
+.button:hover {
+    transform: scale(1.1);
+    transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

@@ -11,20 +11,22 @@ const ShoppingForm = (props) => {
     event.preventDefault();
     const newInfo = {
       name: enteredName,
-      id: Math.round((Math.random().toString()) * 100),
+      id: Math.round(Math.random().toString() * 100),
     };
     props.onSave(newInfo);
-    console.log(newInfo);
     setState("");
-    
   };
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <label>
-        Введите продукт
-        <input type="text" onChange={inputHandler} value={enteredName} />
-      </label>
-      <Button type="submit">Добавить</Button>
+      <input
+        placeholder="Введите продукт"
+        type="text"
+        onChange={inputHandler}
+        value={enteredName}
+        className={classes.input}
+      />
+
+      <Button type="submit" >Добавить</Button>
     </form>
   );
 };
