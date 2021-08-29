@@ -4,10 +4,10 @@ import ShoppingForm from "./components/ShoppingForm";
 import ShoppingList from "./components/ShoppingList";
 
 const shoppingListArr = [
-  // { name: 'молоко', id: 2 },
-  // { name: 'хлеб', id: 3 },
-  // { name: 'яйца', id: 4 },
-  // { name: 'сосиски', id: 1 },
+  { name: 'молоко', id: 2 },
+  { name: 'хлеб', id: 3 },
+  { name: 'яйца', id: 4 },
+  { name: 'сосиски', id: 1 },
 ];
 
 function App() {
@@ -19,11 +19,7 @@ function App() {
     })
   };
   const deleteHandler = (id) => {
-    setState(shoppingListArr.filter(item => {
-      if (item.id !== id) {
-        return item
-      }
-    })
+    setState(shoppingListArr.filter(item => item.id !== id)
     )};
 
   return (

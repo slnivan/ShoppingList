@@ -14,6 +14,7 @@ const ShoppingForm = (props) => {
       id: Math.round((Math.random().toString()) * 100),
     };
     props.onSave(newInfo);
+    console.log(newInfo);
     setState("");
     
   };
